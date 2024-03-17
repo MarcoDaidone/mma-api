@@ -2,11 +2,12 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import mongoose from 'mongoose';
 import { Event } from './models/events.js';
+import 'dotenv/config'
 
 
 
 // Connexion à la base de données MongoDB
-mongoose.connect('mongodb://localhost:27017/scraperdb', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 
@@ -104,8 +105,8 @@ fights.each((index, element) => {
 });
 
 // Vérifier si le titre de l'événement contient 'ufc' ou 'hexagone'
-console.log("Vérification du titre de l'événement..."); //One Championship
-if (title.toLowerCase().includes('ufc') || title.toLowerCase().includes('hexagone') || title.toLowerCase().includes('one championship')) {
+console.log("Vérification du titre de l'événement..."); //One Championship00% FIGHT 
+if (title.toLowerCase().includes('ufc') || title.toLowerCase().includes('hexagone') || title.toLowerCase().includes('one championship') || title.toLowerCase().includes('100% FIGHT ') || title.toLowerCase().includes('KSW')) {
   console.log('Détails des combats:', eventRecord.fights);
   console.log('---');
 
