@@ -34,7 +34,7 @@ export async function scrapeAndSave() {
 
     // Sélectionner les 10 premiers événements
     console.log("Sélection des 10 premiers événements...");
-    const events = $('tr[itemtype="http://schema.org/Event"]');
+    const events = $('tr[itemtype="http://schema.org/Event"]').slice(0, 10);
 
     // Parcourir chaque événement
    for (let i = 0; i < events.length; i++) {
@@ -73,9 +73,9 @@ const fights = $event('tr[itemprop="subEvent"]');
 
 const eventRecord = {
   title: title,
-  time: "undefined",
+  time: "",
   date : date,
-  channel : "undefined",
+  channel : "",
   fights: []
 };
 

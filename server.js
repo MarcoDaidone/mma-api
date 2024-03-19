@@ -10,6 +10,7 @@ import updateTime from './routes/updateTime.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 // Appeler la fonction scrapeAndSave pour scraper et enregistrer les données dans la base de données
 
 app.use(cors())
