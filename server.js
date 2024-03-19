@@ -6,18 +6,18 @@ import cors from 'cors';
 import events from './routes/events.js';
 import updateTime from './routes/updateTime.js';
 
-
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Appeler la fonction scrapeAndSave pour scraper et enregistrer les données dans la base de données
+// Appeler la fonction scrapeAndSave toutes les semaines
+const scrapeInterval = 7 * 24 * 60 * 60 * 1000; // 1 semaine en millisecondes
+setInterval(scrapeAndSave, scrapeInterval);
 
-app.use(cors())
-// Route pour récupérer les événements depuis la base de données
+// Middleware
+app.use(cors());
 app.use(express.json());
-app.use(events)
-app.use(updateTime)
+app.use(events);
+app.use(updateTime);
 
 // Démarrer le serveur
 app.listen(PORT, () => {
