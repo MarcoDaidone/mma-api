@@ -106,7 +106,7 @@ fights.each((index, element) => {
 
 // Vérifier si le titre de l'événement contient 'ufc' ou 'hexagone'
 console.log("Vérification du titre de l'événement..."); //One Championship00% FIGHT 
-if (title.toLowerCase().includes('ufc') || title.toLowerCase().includes('hexagone') || title.toLowerCase().includes('one championship') || title.toLowerCase().includes('100% FIGHT ') || title.toLowerCase().includes('KSW')) {
+if (title.toLowerCase().includes('ufc') || title.toLowerCase().includes('hexagone') || title.toLowerCase().includes('one championship') || title.toLowerCase().includes('100% FIGHT ') || title.toLowerCase().includes('KSW') || title.toLowerCase().includes('PFL') || title.toLowerCase().includes('bellator') ) {
   console.log('Détails des combats:', eventRecord.fights);
   console.log('---');
 
