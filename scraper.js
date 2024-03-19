@@ -34,7 +34,7 @@ export async function scrapeAndSave() {
 
     // Sélectionner les 10 premiers événements
     console.log("Sélection des 10 premiers événements...");
-    const events = $('tr[itemtype="http://schema.org/Event"]').slice(0, 50);
+    const events = $('tr[itemtype="http://schema.org/Event"]').slice(0, 90);
 
     // Parcourir chaque événement
    for (let i = 0; i < events.length; i++) {
