@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Appeler la fonction scrapeAndSave toutes les semaines
-const scrapeInterval = 7 * 24 * 60 * 60 * 1000; // 1 semaine en millisecondes
+const scrapeInterval = 2 * 24 * 60 * 60 * 1000; // 2 jours en millisecondes
 setInterval(scrapeAndSave, scrapeInterval);
 
 // Middleware
