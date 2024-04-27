@@ -63,7 +63,7 @@ export async function scrapeAndSave() {
       // Extraire les détails de l'événement
       console.log("Extraction des détails de l'événement...");
       const title = $event('h1').text();
-      console.log("Titre de l'événement:", title);
+      console.log("Titre de l'événement:", title.toLowerCase());
       const date = $event('meta[itemprop="startDate"]').attr('content');
       const mainEvents = $event('div.fight_card h3 span').map((index, element) => $(element).text()).get();
       
@@ -81,10 +81,9 @@ const eventRecord = {
 
 
 // Ajouter les main events à la liste des combats
-
   eventRecord.fights.push({
-    fighterLeft: { name: mainEvents[0], record:""},
-    fighterRight: { name: mainEvents[1], record: "" },
+    fighterLeft: { name: mainEvents[0].replace('<br>', ' '), record:""},
+    fighterRight: { name: mainEvents[1].replace('<br>', ' '), record: "" },
     weightClass: "undefined"
   });
 
