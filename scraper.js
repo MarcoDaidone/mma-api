@@ -83,15 +83,15 @@ const eventRecord = {
 // Ajouter les main events à la liste des combats
   eventRecord.fights.push({
     fighterLeft: { name: mainEvents[0].replace('<br>', ' '), record:""},
-    fighterRight: { name: mainEvents[1], record: "" },
+    fighterRight: { name: mainEvents[1].replace('<br>', ' '), record: "" },
     weightClass: "undefined"
   });
 
 
 
 fights.each((index, element) => {
-  const fightersLeft = $(element).find('.fighter_list.left span[itemprop="name"]').html().replace('<br>', ' ').split(' ');;
-  const fightersRight = $(element).find('.fighter_list.right span[itemprop="name"]').html().replace('<br>', ' ').split(' ');;
+  const fightersLeft = $(element).find('.fighter_list.left span[itemprop="name"]').html().split(' ');;
+  const fightersRight = $(element).find('.fighter_list.right span[itemprop="name"]').html().split(' ');;
   const weightClass = $(element).find('.weight_class').text();
   const recordLeft = $(element).find('.fighter_list.left .record em').text();
   const recordRight = $(element).find('.fighter_list.right .record em').text();
