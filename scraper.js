@@ -3,12 +3,12 @@ import cheerio from 'cheerio';
 import mongoose from 'mongoose';
 import { Event } from './models/events.js';
 import 'dotenv/config'
+import { connectToDatabase, db } from './database.js';
 
 
 
 // Connexion à la base de données MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
+connectToDatabase();
 
 
 export async function scrapeAndSave() {
