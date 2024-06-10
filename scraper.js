@@ -90,15 +90,15 @@ const eventRecord = {
 
 
 fights.each((index, element) => {
-  const fightersLeft = $(element).find('.fighter_list.left span[itemprop="name"]').html().split(' ');;
-  const fightersRight = $(element).find('.fighter_list.right span[itemprop="name"]').html().split(' ');;
+  const fightersLeft = $(element).find('.fighter_list.left span[itemprop="name"]').html();
+  const fightersRight = $(element).find('.fighter_list.right span[itemprop="name"]').html();
   const weightClass = $(element).find('.weight_class').text();
   const recordLeft = $(element).find('.fighter_list.left .record em').text();
   const recordRight = $(element).find('.fighter_list.right .record em').text();
 
   eventRecord.fights.push({
-    fighterLeft: { name: fightersLeft[0], record: recordLeft },
-    fighterRight: { name: fightersRight[0], record: recordRight },
+    fighterLeft: { name: fightersLeft, record: recordLeft },
+    fighterRight: { name: fightersRight, record: recordRight },
     weightClass: weightClass
   });
 });

@@ -8,11 +8,13 @@ const eventSchema = new mongoose.Schema({
     fights: [{
       fighterLeft: {
         name: String,
-        record: String
+        record: String,
+        odds: String
       },
       fighterRight: {
         name: String,
-        record: String
+        record: String,
+        odds: String 
       },
       weightClass: String
     }]
