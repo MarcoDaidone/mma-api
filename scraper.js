@@ -82,8 +82,8 @@ const eventRecord = {
 
 // Ajouter les main events à la liste des combats
   eventRecord.fights.push({
-    fighterLeft: { name: mainEvents[0].replace('<br>', ' '), record:""},
-    fighterRight: { name: mainEvents[1].replace('<br>', ' '), record: "" },
+    fighterLeft: { name: mainEvents[0].replace('<br>', ' '), record:"", odds:""},
+    fighterRight: { name: mainEvents[1].replace('<br>', ' '), record: "", odds:"" },
     weightClass: "undefined"
   });
 
